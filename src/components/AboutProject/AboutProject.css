@@ -1,0 +1,47 @@
+.project {
+  background-color: #ffffff;
+  padding-left: 70px;
+  padding-right: 70px;
+  height: auto;
+}
+
+.project__title {
+  font-weight: 400;
+  line-height: auto;
+  font-size: 22px;
+  margin-top: 110px;
+  margin-bottom: 23px;
+}
+
+.project__line {
+    max-width: 1140px;
+    width: 100%;
+    margin-top: 0;
+}
+
+.about-project__container {
+    display: flex;
+    gap: 40px;
+    margin-top: 70px;
+    margin-bottom: 110px;
+}
+
+.about-project__description {
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    width: 100%;
+}
+
+.about-project__description-title {
+    line-height: auto;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 26px;
+}
+
+.about-project__description-text {
+    line-height: 20px;
+    font-size: 14px;
+    margin: 0;
+}
