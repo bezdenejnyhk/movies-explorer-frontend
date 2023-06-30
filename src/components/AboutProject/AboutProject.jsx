@@ -1,12 +1,11 @@
 import React from "react";
 import "./AboutProject.css";
-import line from "../../images/line.svg";
 
 export default function AboutProject() {
   return (
     <div className="project">
       <h2 className="project__title">О проекте</h2>
-      <img className="project__line" src={line} alt="Линия-разделитель" />
+      <hr className="project__line" />
       <div className="about-project__container">
         <div className="about-project__description">
           <p className="about-project__description-title">
@@ -26,6 +25,14 @@ export default function AboutProject() {
             соблюдать, чтобы успешно защититься.
           </p>
         </div>
+      </div>
+      <div className="project__progress">
+        <div className="project__progress-black">1 неделя</div>
+        <div className="project__progress-grey">4 недели</div>
+      </div>
+      <div className="project__progress-text">
+        <p className="progress-text_one">Back-end</p>
+        <p className="progress-text_four">Front-end</p>
       </div>
     </div>
   );

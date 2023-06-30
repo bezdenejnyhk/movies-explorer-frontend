@@ -1,16 +1,16 @@
-import React from 'react';
-import './Navigation.css';
-import { useLocation, Link } from 'react-router-dom';
-import icon_acaunt from '../../images/icon_acaunt.svg';
-import useResize from '../hooks/useResize';
+import React from "react";
+import "./Navigation.css";
+import { useLocation, Link } from "react-router-dom";
+import icon_acaunt from "../../images/icon_acaunt.svg";
+import useResize from "../../hooks/useResize";
 
 export default function Navigation({ isLoggedIn }) {
   let location = useLocation();
   let size = useResize();
 
-  const routeClass = size.width <= 786 ? 'nav__route-drawer ' : 'nav__route ';
+  const routeClass = size.width <= 786 ? "nav__route-drawer " : "nav__route ";
   const activeRouteClass =
-    size.width <= 786 ? ' nav__route-drawer_active ' : ' nav__route_active ';
+    size.width <= 786 ? " nav__route-drawer_active " : " nav__route_active ";
 
   return (
     <nav className="nav">
@@ -19,7 +19,7 @@ export default function Navigation({ isLoggedIn }) {
           <div className="nav__movies">
             <Link
               className={`${routeClass} nav__route-main${
-                location.pathname === '/' ? activeRouteClass : ''
+                location.pathname === "/" ? activeRouteClass : ""
               }`}
               to="/"
             >
@@ -28,7 +28,7 @@ export default function Navigation({ isLoggedIn }) {
 
             <Link
               className={`${routeClass} nav__movies-route${
-                location.pathname === '/movies' ? activeRouteClass : ''
+                location.pathname === "/movies" ? activeRouteClass : ""
               }`}
               to="/movies"
             >
@@ -37,7 +37,7 @@ export default function Navigation({ isLoggedIn }) {
 
             <Link
               className={`${routeClass} nav__movies-route${
-                location.pathname === '/saved-movies' ? activeRouteClass : ''
+                location.pathname === "/saved-movies" ? activeRouteClass : ""
               }`}
               to="/saved-movies"
             >
@@ -62,4 +62,4 @@ export default function Navigation({ isLoggedIn }) {
       )}
     </nav>
   );
-};
+}

@@ -1,4 +1,4 @@
 import React from "react";
-import './Register';
+import "./Register";
 
 export default function Register() {}
