@@ -1,10 +1,14 @@
-import { Router, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Main from "../Main/Main";
 import Login from "../Login/Login";
 import Registre from "../Register/Register";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import Movies from "../Movies/Movies";
+import SavedMovies from "../SavedMovies/SavedMovies";
+import Profile from "../Profile/Profile";
+import NotFound from "../NotFound/NotFound";
 
 export default function App() {
   let location = useLocation();
@@ -19,18 +23,18 @@ export default function App() {
       ) : (
         ""
       )}
-      <Main>
+      <main>
         <Routes>
-          <Router path="/" element={<Main />} />
-          <Router path="/signup" element={<Registre />} />
-          <Router path="/signin" element={<Login />} />
-          {/* <Route path="/movies" element={<Movies />} />
+          <Route path="/" element={<Main />} />
+          <Route path="/signup" element={<Registre />} />
+          <Route path="/signin" element={<Login />} />
+          <Route path="/movies" element={<Movies />} />
           <Route path="/saved-movies" element={<SavedMovies />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile/>} />
 
-          <Route path="*" element={<NotFound />} /> */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
-      </Main>
+      </main>
       {footerPaths.includes(location.pathname) ? <Footer /> : ""}
     </div>
   );

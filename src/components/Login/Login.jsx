@@ -10,11 +10,11 @@ export default function Login() {
     console.log(val);
   };
 
-  <div className="login-page">
+  <section className="login-page">
     <Link className="login-page__route" to="/">
       <img className="login-page__logo" src={logo} alt="Логотип" />
     </Link>
-    <h2>Рады видеть!</h2>
+    <h1>Рады видеть!</h1>
     <form
       onSubmit={(e) => {
         e.preventDefault();
@@ -83,5 +83,5 @@ export default function Login() {
         </Link>
       </div>
     </form>
-  </div>;
+  </section>;
 }
