@@ -30,6 +30,7 @@
   width: 100px;
   height: 52px;
   color: #ffffff;
+  border: none;
   background-color: #000;
   border-radius: 5px;
   cursor: pointer;
@@ -56,7 +57,7 @@
 @media screen and (max-width: 600px) {
   .search {
     padding: 70px 0 64px;
-  } 
+  }
   .search__form {
     padding: 0 6px 0 12px;
     position: relative;
