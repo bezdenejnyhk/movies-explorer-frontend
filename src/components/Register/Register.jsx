@@ -1,14 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import {useEffect} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormAndValidation } from '../../hooks/useFormAndValidation';
 import Logo from '../../images/logo.svg';
 import './Register.css';
+import { validateEmail, validateName } from '../../utils/validation';
 
-export default function Register() {
+export default function Register({ onRegister, isLoggedIn, apiErrors }) {
   const { values, handleChange, errors, isValid } = useFormAndValidation();
-  const onRegister = (val) => {
-    console.log(val);
-  };
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/movies');
+    }
+  }, [isLoggedIn]);
 
   return (
     <section className="register-page">
@@ -46,7 +51,7 @@ export default function Register() {
               isValid ? '' : 'register-form__input-error_active'
             }`}
           >
-            {errors.name}
+            {validateName(values.name).message}
           </span>
         </div>
 
@@ -71,7 +76,7 @@ export default function Register() {
               isValid ? '' : 'register-form__input-error_active'
             }`}
           >
-            {errors.email}
+            {validateEmail(values.email).message}
           </span>
         </div>
 
@@ -99,14 +104,20 @@ export default function Register() {
             {errors.password}
           </span>
           <span className="register-form__api-error">
-            Что-то пошло не так...
+          {apiErrors.register.message === 'Failed to fetch'
+              ? 'При регистрации пользователя произошла ошибка.'
+              : apiErrors.register.errorText}
           </span>
         </div>
 
         <button
           type="submit"
           className="register-form__btn"
-          disabled={!isValid}
+          disabled={
+            !isValid ||
+            validateEmail(values.email).invalid ||
+            validateName(values.name).invalid
+          }
         >
           Зарегистрироваться
         </button>

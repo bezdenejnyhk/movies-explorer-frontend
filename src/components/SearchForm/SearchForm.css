@@ -40,6 +40,17 @@
   opacity: 0.8;
 }
 
+.search-form__reset-button {
+  width: 100px;
+  height: 52px;
+  color: #ffffff;
+  border: none;
+  background-color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
 @media screen and (max-width: 768px) {
   .search__form {
     padding: 0 21px;
