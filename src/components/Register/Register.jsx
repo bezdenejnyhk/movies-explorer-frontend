@@ -112,7 +112,7 @@ export default function Register({ onRegister, isLoggedIn, apiErrors }) {
 
         <button
           type="submit"
-          className="register-form__btn"
+          className={`register-form__btn ${!isValid ? '' : 'register-form__btn_active'}`}
           disabled={
             !isValid ||
             validateEmail(values.email).invalid ||

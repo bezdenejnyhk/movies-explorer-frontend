@@ -3,12 +3,14 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 import { useState, useMemo, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import useResize from "../../hooks/useResize.js";
+import {WIDTH_1280, WIDTH_780, COL_2, COL_3, COL_5, COL_8, COL_12} from "../../utils/constants";
 
 const MoviesCardList = ({
   movies,
   savedMovies,
   onLikeMovie,
   onDeleteMovie,
+  mini
 }) => {
   let size = useResize();
   const [moviesToAdd, setMoviesToAdd] = useState(0);
@@ -19,7 +21,7 @@ const MoviesCardList = ({
   }, [movies]);
 
   const moviesToRender = useMemo(() => {
-    const countToRender = size.width < 768 ? 5 : size.width < 1280 ? 8 : 12;
+    const countToRender = size.width < WIDTH_780 ? COL_5 : size.width < WIDTH_1280 ? COL_8 : COL_12;
 
     return movies.slice(0, countToRender + moviesToAdd);
   }, [movies, moviesToAdd, size]);
@@ -35,6 +37,7 @@ const MoviesCardList = ({
               savedMovies={savedMovies}
               onLikeMovie={onLikeMovie}
               onDeleteMovie={onDeleteMovie}
+              mini={mini}
             />
           );
         })}
@@ -43,7 +46,7 @@ const MoviesCardList = ({
         movies.length > moviesToRender.length && (
           <button
             onClick={() => {
-              setMoviesToAdd((prev) => prev + (size.width >= 1280 ? 3 : 2));
+              setMoviesToAdd((prev) => prev + (size.width >= WIDTH_1280 ? COL_3 : COL_2));
             }}
             className="movies__more-btn"
           >
