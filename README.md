@@ -9,3 +9,7 @@
 # Пул реквест
 
  Ссылка на пул реквест: https://github.com/bezdenejnyhk/movies-explorer-frontend/pull/2
+
+ # Ссылка на проект
+
+ http://yakovleva.diploma.nomoredomains.work/
