@@ -21,10 +21,16 @@ const MoviesCardList = ({
   }, [movies]);
 
   const moviesToRender = useMemo(() => {
-    const countToRender = size.width < WIDTH_780 ? COL_5 : size.width < WIDTH_1280 ? COL_8 : COL_12;
-
-    return movies.slice(0, countToRender + moviesToAdd);
-  }, [movies, moviesToAdd, size]);
+    if (!mini) {
+      const countToRender =
+        size.width < WIDTH_780
+          ? COL_5
+          : size.width < WIDTH_1280
+          ? COL_8
+          : COL_12;
+      return movies.slice(0, countToRender + moviesToAdd);
+    } else return movies;
+  }, [movies, moviesToAdd, size, mini]);
 
   return (
     <>

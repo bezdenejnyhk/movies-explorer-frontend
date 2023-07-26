@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./SavedMovies.css";
+import { useLocation } from "react-router-dom";
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
@@ -8,6 +9,7 @@ export default function SavedMovies({ savedMovies, onDeleteMovie }) {
   const searchedMovies = localStorage.getItem("searchedSavedMovies");
   const queries = localStorage.getItem("searchQuerySavedMovies");
   const [searchQuery, setSearchQuery] = useState({});
+  const location = useLocation();
 
   useEffect(() => {
     if (searchedMovies) {
@@ -65,7 +67,7 @@ export default function SavedMovies({ savedMovies, onDeleteMovie }) {
         onResetInput={handleResetInput}
       />
       {filteredMovies.length ? (
-        <MoviesCardList movies={filteredMovies} onDeleteMovie={onDeleteMovie} />
+        <MoviesCardList movies={filteredMovies} onDeleteMovie={onDeleteMovie} mini={true}/>
       ) : (
         searchedMovies && (
           <p className="movies__not-found">

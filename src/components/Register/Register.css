@@ -77,16 +77,16 @@
     line-height: 17px;
     min-height: 45px;
     margin: 129px 0 16px;
-    cursor: pointer;
-  }
-  
-  .register-form__btn:hover {
-    opacity: 0.8;
   }
 
   .register-form__btn_active {
     background: #000;
     color: #fff;
+    cursor: pointer;
+  }
+
+  .register-form__btn_active:hover {
+    opacity: 0.8;
   }
   
   register-form__input-field {
