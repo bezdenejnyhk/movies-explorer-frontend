@@ -5,3 +5,11 @@
 # ЯндексДиск
 
 Ссылка на ЯндексДиск: https://disk.yandex.ru/d/kmLQ4x417RM5QQ
+
+# Пул реквест
+
+ Ссылка на пул реквест: https://github.com/bezdenejnyhk/movies-explorer-frontend/pull/2
+
+ # Ссылка на проект
+
+ http://yakovleva.diploma.nomoredomains.work/

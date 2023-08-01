@@ -1,14 +1,20 @@
-import React from "react";
+import { useEffect } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
+import { validateEmail } from "../../utils/validation";
 
-export default function Login() {
+export default function Login({ onLogin, isLoggedIn, apiErrors }) {
   const { values, handleChange, errors, isValid } = useFormAndValidation();
-  const onLogin = (val) => {
-    console.log(val);
-  };
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/movies");
+    }
+  }, [isLoggedIn]);
+
   return (
     <section className="login-page">
       <Link className="login-page__route" to="/">
@@ -43,7 +49,7 @@ export default function Login() {
               isValid ? "" : "form__input-error_active"
             }`}
           >
-            {errors.email}
+            {validateEmail(values.email).message}
           </span>
         </div>
 
@@ -70,9 +76,18 @@ export default function Login() {
           >
             {errors.password}
           </span>
+          <span className="form__api-error">
+            {apiErrors.login.message === "Failed to fetch"
+              ? "При авторизации произошла ошибка."
+              : apiErrors.login.errorText}
+          </span>
         </div>
 
-        <button type="submit" className="form__btn">
+        <button
+          type="submit"
+          className={`form__btn ${!isValid ? "" : "form__btn_active"}`}
+          disabled={!isValid || validateEmail(values.email).invalid}
+        >
           Войти
         </button>
 
