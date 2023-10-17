@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutMe.css";
-import photo from "../../images/photo.jpg";
+import ava from "../../images/ava.jpg";
 
 export default function AboutMe() {
   return (
@@ -9,14 +9,16 @@ export default function AboutMe() {
       <hr className="aboutMe__line" />
       <div className="aboutMe__conteiner">
         <div className="aboutMe__caption">
-          <h3 className="aboutMe__name">Виталий</h3>
-          <p className="aboutMe__about">Фронтенд-разработчик, 30 лет</p>
+          <h3 className="aboutMe__name">Ксения</h3>
+          <p className="aboutMe__about">Фронтенд-разработчик, 25 лет</p>
           <p className="aboutMe__text">
-            Я родился и живу в Саратове, закончил факультет экономики СГУ. У
-            меня есть жена и дочь. Я люблю слушать музыку, а ещё увлекаюсь
-            бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ
-            Контур». После того, как прошёл курс по веб-разработке, начал
-            заниматься фриланс-заказами и ушёл с постоянной работы.
+            Я родилась в Республике Бурятия, город Улан-Удэ, живу уже 7 лет в
+            Москве, закончила факультет управления МАДИ. У меня есть прекрасный
+            кот-мейнкун по кличке Шайтан. Я люблю слушать музыку, а ещё
+            увлекаюсь пауэрлифтингом. Недавно начала кодить. С 2020 года
+            работала в компании «Синтол». После того, как прошла курс по
+            веб-разработке, устроилась на новое место Fullstack-разработчиком в
+            компанию «Айти солюшнс».
           </p>
           <a
             className="aboutMe__link"
@@ -28,7 +30,7 @@ export default function AboutMe() {
           </a>
         </div>
         <div className="aboutMe__img">
-          <img className="aboutMe__photo" src={photo} alt="Фото студента" />
+          <img className="aboutMe__photo" src={ava} alt="Фото студента" />
         </div>
       </div>
     </div>

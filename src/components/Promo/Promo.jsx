@@ -11,7 +11,7 @@ return (
         </div>
         <img className='promo__homeImg' src={landingLogo} alt='Изображение шара' />
         </div>
-        <button className='promo__btn'>Узнать больше</button>
+        {/* <button className='promo__btn'>Узнать больше</button> */}
     </div>
 )
 }
